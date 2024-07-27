@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: Sans-Serif;
+}
+body {
+    background: rgb(36, 33, 43);
+}
+nav {
+    background: #8562cd;
+    backdrop-filter: blur(50px);
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 7px 17px;
+    border-radius: 3px;
+}
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check {
+    display: none;
+}
+a.active,
+a:hover {
+    background: #704fb5;
+    transition: 0.5s;
+}
+label.logo {
+    color: white;
+    font-size: 25px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+@media (max-width: 952px) {
+    label.logo {
+        font-size: 30px;
+        padding-left: 5px;
+    }
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #272038;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+    }
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    a:hover,
+    a.active {
+        background: none;
+        color: #794dd6;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+}
+section {
+    background: url(bg.jpg) no-repeat;
+    background-size: cover;
+    height: calc(100vh);
+}
+.card-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    color: white;
+}
+.card {
+    width: 325px;
+    background: #a590cf;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px;
+    box-shadow: 0px 3px 50px #a590cf;
+}
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 5px solid #9178c4;
+}
+.card-content {
+    padding: 16px;
+}
+.card-content h2 {
+    color: ghostwhite;
+    margin-bottom: 8px;
+}
+.card-content p {
+    color: antiquewhite;
+    font-size: 15px;
+    line-height: 1.3;
+}
+.card-content .btn {
+    display: inline-block;
+    padding: 8px 15px;
+    color: white;
+    background: #a590cf;
+    border-radius: 4px;
+    margin-top: 16px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.71);
+}
