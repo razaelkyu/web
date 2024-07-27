@@ -13,34 +13,19 @@
     </head>
     <body>
         <nav>
-            <input type="checkbox" id="check" />
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <label for="" class="logo">RazaelKyu</label>
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Support</a></li>
+            <div class="logo">
+                <h1>Kyurichi</h1>
+            </div>
+            <ul id="menuList">
+                <li><a href="#">Home</a></li>
+                <li><a href="mailto:razaelkyu@gmail.com">Contact</a></li>
             </ul>
+            <div class="menu-icon">
+                <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+            </div>
         </nav>
 
         <div class="card-group">
-            <div class="card-container">
-                <div class="card">
-                    <img src="indonesian-island.jpg" alt="" />
-                    <div class="card-content">
-                        <h2>Indonesia Island</h2>
-                        <p>
-                            one of the Indonesian islands that will be beautiful
-                            but the times, time is too fast until there might be
-                            a lot of garbage hanging around.
-                        </p>
-                        <a class="btn" href="#">Learn More</a>
-                    </div>
-                </div>
-            </div>
-
             <div class="card-container">
                 <div class="card">
                     <img src="kota-tua-jakarta.jpg" alt="" />
@@ -63,5 +48,6 @@
                 </div>
             </div>
         </div>
+        <script src="./script.js"></script>
     </body>
 </html>
