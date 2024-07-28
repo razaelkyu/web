@@ -1,89 +1,127 @@
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
     font-family: Sans-Serif;
 }
+
 body {
-    background: rgb(36, 33, 43);
+    min-height: 100vh;
+    background: url("background.jpg") no-repeat;
+    box-sizing: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
-nav {
-    padding: 10px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: mediumpurple;
-    height: 70px;
+
+.header {
     position: fixed;
     top: 0;
-    right: 0;
     left: 0;
-}
-.logo {
-    color: white;
-}
-nav ul {
+    width: 100%;
+    padding: 1.3rem 10%;
     display: flex;
-    gap: 30px;
+    justify-content: space-between;
     align-items: center;
+    z-index: 100;
 }
-nav ul li {
-    list-style: none;
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
 }
-nav ul li a {
-    text-decoration: none;
+
+.logo {
+    font-size: 2rem;
     color: white;
+    text-decoration: none;
+    font-weight: 700;
 }
-a:hover {
-    background: #c3acec;
-    padding: 6px;
-    border-radius: 4px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+
+.navbar a {
+    font-size: 1.15rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
 }
-.menu-icon {
+
+#check {
     display: none;
 }
-.menu-icon i {
+
+.icons {
+    position: absolute;
     color: white;
-    font-size: 30px;
+    font-size: 2.8rem;
+    display: none;
+    right: 0;
+    padding-right: 5%;
 }
-@media (max-width: 600px) {
-    nav ul {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        text-align: center;
-        background: mediumpurple;
-        gap: 0;
-        overflow: hidden;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
+
+/* breakpoints */
+@media (max-width: 992px) {
+    .header {
+        padding: 1.3rem 5%;
     }
-    nav ul li {
-        padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex;
     }
-    a:hover {
-        color: #d6c7f2;
-        background: none;
-        border-radius: 0;
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+    #check:checked ~ .icons #menu-icon {
+        display: none;
     }
-    .menu-icon {
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked ~ .icons #close-icon {
         display: block;
     }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 17.7rem;
+        background: rgb(255, 255, 255, 0.1);
+        backdrop-filter: blur(50px);
+        height: 0;
+        transition: 0.3s ease;
+        overflow: hidden;
+        box-shadow: 0 0.5rem 1rem rgb(0, 0, 0, 0.1);
+    }
+
+    #check:checked ~ .navbar {
+        height: 17.7rem;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+    }
 }
-#menuList {
-    transition: all 0.3s;
-}
+
+/* card styling */
 .card-group {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .card-container {
     display: flex;
     justify-content: center;
@@ -91,37 +129,40 @@ a:hover {
     margin-top: 100px;
     color: white;
 }
+
 .card {
     width: 325px;
-    background: #a590cf;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
     border-radius: 8px;
     overflow: hidden;
     margin: 20px;
-    box-shadow: 0px 3px 50px #a590cf;
+    box-shadow: 0px 3px 50px #9d229d;
 }
-.card img {
-    width: 100%;
-    height: auto;
-    border-bottom: 5px solid #9178c4;
-}
+
 .card-content {
     padding: 16px;
 }
+
 .card-content h2 {
     color: ghostwhite;
     margin-bottom: 8px;
 }
+
 .card-content p {
-    color: antiquewhite;
+    color: #dddddd;
     font-size: 15px;
     line-height: 1.3;
 }
+
 .card-content .btn {
     display: inline-block;
     padding: 8px 15px;
     color: white;
-    background: #a590cf;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     margin-top: 16px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.71);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    text-decoration: none;
 }
